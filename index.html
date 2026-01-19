@@ -4,50 +4,84 @@
 <meta charset="UTF-8">
 <title>Caça Achadinhos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
-  background: linear-gradient(180deg, #ff7ab8, #ff9ccc);
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
   margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #ff6fae, #ffb3d9);
+  color: #ffffff;
+  text-align: center;
 }
+
+/* CONTAINER */
 .box {
   max-width: 420px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 28px 20px 40px;
 }
+
+/* LOGO */
 .logo img {
-  width: 160px;
-  margin-bottom: 10px;
+  width: 170px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
+
+/* TÍTULO */
 h1 {
-  font-size: 32px;
-  margin: 5px 0;
+  font-size: 30px;
+  margin: 6px 0;
 }
+
+/* DESCRIÇÃO */
 p {
   font-size: 16px;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
+
+/* BOTÕES */
 button {
   width: 100%;
   padding: 18px;
   margin: 12px 0;
   border: none;
-  border-radius: 22px;
+  border-radius: 24px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.15s ease;
 }
-.shopee { background: #ffffff; color: #ff3b8b; }
-.shein { background: #ffd3e6; color: #ff3b8b; }
-.amazon { background: #ffffff; color: #ff3b8b; }
-.promos { background: #ff3b8b; color: #ffffff; }
 
+button:hover {
+  transform: scale(1.04);
+}
+
+.shopee {
+  background: #ffffff;
+  color: #ff3b8b;
+}
+
+.shein {
+  background: #ffe1ef;
+  color: #ff3b8b;
+}
+
+.amazon {
+  background: #ffffff;
+  color: #ff3b8b;
+}
+
+.promos {
+  background: #ff3b8b;
+  color: #ffffff;
+}
+
+/* RODAPÉ */
 .footer {
   font-size: 12px;
   opacity: 0.9;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 </style>
 </head>
@@ -57,29 +91,29 @@ button {
 
   <!-- LOGO -->
   <div class="logo">
-    <img src="logo.png" alt="Caça Achadinhos">
+    <img src="./logo.png" alt="Logo Caça Achadinhos">
   </div>
 
   <h1>Caça Achadinhos</h1>
   <p>Achadinhos bons, baratos e que valem a pena 💸✨</p>
 
   <button class="shopee"
-    onclick="location.href='https://shopee.com.br/?affiliate_id=18388370476'">
+    onclick="window.location.href='https://shopee.com.br/?affiliate_id=18388370476'">
     🔥 Shopee – Achadinhos
   </button>
 
   <button class="shein"
-    onclick="location.href='https://www.shein.com/?ref=KZ66C'">
+    onclick="window.location.href='https://www.shein.com/?ref=KZ66C'">
     💖 Shein – Ofertas
   </button>
 
   <button class="amazon"
-    onclick="location.href='https://www.amazon.com.br/?tag=alanaeugenio-20'">
+    onclick="window.location.href='https://www.amazon.com.br/?tag=alanaeugenio-20'">
     ⚡ Amazon – Promoções
   </button>
 
   <button class="promos"
-    onclick="location.href='https://shopee.com.br/?affiliate_id=18388370476'">
+    onclick="window.location.href='https://shopee.com.br/?affiliate_id=18388370476'">
     🚨 Promoções do Dia
   </button>
 
