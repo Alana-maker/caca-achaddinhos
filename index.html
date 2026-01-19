@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -14,18 +15,40 @@ body {
   text-align: center;
 }
 
+/* ===== CONTAINER ===== */
 .box {
   max-width: 420px;
   margin: auto;
   padding: 30px 20px 40px;
 }
 
+/* ===== LOGO ===== */
 .logo img {
   width: 180px;
   margin-bottom: 12px;
+  animation: logoEntrada 1s ease-out forwards, logoPulse 3s ease-in-out infinite;
   filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
 
+/* Entrada da logo */
+@keyframes logoEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulso suave */
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* ===== TEXTO ===== */
 h1 {
   font-size: 30px;
   margin: 6px 0;
@@ -36,6 +59,7 @@ h1 {
   margin-bottom: 26px;
 }
 
+/* ===== BOTÕES ===== */
 button {
   width: 100%;
   padding: 18px;
@@ -45,18 +69,46 @@ button {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  opacity: 0;
+  animation: botaoEntrada 0.6s ease forwards;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* Entrada em cascata */
+button:nth-child(1) { animation-delay: 0.3s; }
+button:nth-child(2) { animation-delay: 0.5s; }
+button:nth-child(3) { animation-delay: 0.7s; }
+button:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes botaoEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover */
 button:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.25);
 }
 
+/* Clique */
+button:active {
+  transform: scale(0.97);
+}
+
+/* Cores */
 .shopee { background: #ffffff; color: #ff3b8b; }
 .shein  { background: #ffe1ef; color: #ff3b8b; }
 .amazon { background: #ffffff; color: #ff3b8b; }
 .promos { background: #ff3b8b; color: #ffffff; }
 
+/* ===== RODAPÉ ===== */
 .footer {
   font-size: 12px;
   opacity: 0.9;
@@ -70,11 +122,10 @@ button:hover {
 
   <!-- LOGO -->
   <div class="logo">
-    <img src="logo.png" alt="Caça Achadinhos">
+    <img src="logo.png" alt="Logo Caça Achadinhos">
   </div>
 
   <h1>Caça Achadinhos</h1>
-
   <div class="subtitle">
     Achadinhos bons, baratos e que valem a pena 💸✨
   </div>
